@@ -1,0 +1,3 @@
+name,cipherdir,mountpoint,passfile
+crypt-film,/crypt/film,/mnt/film,/gocryptfs/pass
+crypt-tv,/crypt/tv,/mnt/tv,/gocryptfs/pass
