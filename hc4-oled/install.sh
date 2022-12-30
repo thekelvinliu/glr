@@ -5,14 +5,13 @@ SCRIPT_SOURCE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # install venv
 if [[ ! -d "$SCRIPT_SOURCE/venv" ]]; then
-  python3 -m venv "$SCRIPT_SOURCE/venv"
+  python3 -m venv --system-site-packages --symlinks "$SCRIPT_SOURCE/venv"
 fi
 
 # use venv pip
 PATH="$SCRIPT_SOURCE/venv/bin:$PATH"
 pip install --upgrade pip setuptools wheel
 
-# TODO add this file
 if [[ -r "$SCRIPT_SOURCE/requirements.txt" ]]; then
   pip install --requirement "$SCRIPT_SOURCE/requirements.txt" --upgrade
 fi
